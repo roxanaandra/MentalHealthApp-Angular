@@ -1,0 +1,27 @@
+
+<div class="h-screen  min-h-screen flex items-center justify-center">
+    <div class="bg-cover bg-center w-full h-full " style="background-image: url('assets/images/background.png')">
+        <div class="w-2/5 h-full flex justify-center items-center flex-col content-center ring-4 bg-white opacity-75 rounded-lg px-1.5">
+             <div class="flex justify-center items-center flex-col md:h-auto" *ngIf="!showMoreInfo">
+            <h2 class="text-4xl md:text-5xl rs:text-xs cl:text-xs jv:text-xs lg:text-4xl   sm:text-xs font-medium text-wrap tracking-wide mb-1 content-center w-3/4 ">It's ok to not be okay, why I am hiding my struggles?</h2>
+            <p class="text-xl w-3/4 rs:text-xs cl:text-xs jv:text-xs lg:text-xl text-wrap text-slate-950 mt-3.5 mb-3.5">At Mental Health Appp, we believe in the power of understanding, compassion, and accessible support to transform lives. Our mission is to guide individuals towards a path of mental wellness and resilience, breaking down the barriers of stigma and shame that too often surround mental health.</p>
+            <button (click)="seeMoreButton()" class="border rs:text-xs cl:text-xs jv:text-xs lg:text-xl border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white font-bold py-2 px-4 rounded transition-colors duration-150">Join the campaign</button>
+            </div>
+            <div *ngIf="showMoreInfo" class="max-w-md mx-auto">
+                <div class="text-center">
+                    <p class="text-base text-gray-700">Mental Health Campaign</p>
+                    <p class="text-base text-gray-700">Our mission is simple: to break the stigma surrounding mental health and encourage open conversations about mental well-being. We believe that everyone deserves access to resources and support for their mental health, just as they would for their physical health.</p>
+                    <button (click)="redirectToPage()" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-1.5">
+                        See more
+                    </button>
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+<div>
+    <app-journal></app-journal>
+</div>

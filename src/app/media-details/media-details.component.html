@@ -1,0 +1,6 @@
+<div class="bg-blue-100 w-full h-full flex flex-col items-center justify-center gap-4 p-4">
+    <div *ngFor="let articol of articols" class="max-w-screen-md w-full">
+        <h2 class="text-center text-lg md:text-xl">{{ articol.title }}</h2>
+        <p class="text-center">{{ articol.description }}</p>
+    </div>
+</div>

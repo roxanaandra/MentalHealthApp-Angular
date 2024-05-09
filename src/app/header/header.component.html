@@ -1,0 +1,42 @@
+
+<nav class="bg-blue-500 p-4 rs:flex rs:flex-wrap">
+    <div class="container mx-auto flex justify-between items-center">
+        <div class="flex items-center justify-between w-full rs:w-auto">
+            <a class="text-white text-2xl font-bold" routerLink="/">Mental Health App</a>
+            <button class="text-white lg:invisible" (click)="toggleMenu()">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+              </button>
+
+        </div>
+     
+      <ul class="flex rs:invisible lg:visible">
+        <li class="mr-6 ">
+          <a class="text-white" routerLink="/main-page">Home</a>
+        </li>
+        <li class="mr-6">
+          <a class="text-white" routerLink="/journal-details">Journaling</a>
+        </li>
+        <li>
+          <a class="text-white" routerLink="/quiz">Quiz Game</a>
+        </li>
+      </ul>
+    </div>
+
+    <div>
+    
+      <div [ngClass]="{'hidden': !menuOpen, 'block': menuOpen}" class="bg-blue-500 lg:hidden">
+        <ul class="p-4">
+          <li class="text-white p-2 border-b border-white">
+            <a routerLink="/main-page">Home</a>
+          </li>
+          <li class="text-white p-2 border-b border-white">
+            <a routerLink="/journal-details">Journaling</a>
+          </li>
+          <li class="text-white p-2">
+            <a routerLink="/quiz">Quiz Game</a>
+          </li>
+        </ul>
+      </div>
+      </div>
+    
+  </nav>

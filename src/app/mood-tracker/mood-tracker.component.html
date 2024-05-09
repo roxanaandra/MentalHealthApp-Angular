@@ -1,0 +1,16 @@
+<div class="bg-blue-100 w-full h-96 flex items-center justify-center">
+    <div class="text-center">
+        <h2 class="text-2xl font-bold mb-4">Mood Tracker</h2>
+        <div class="space-x-4 mb-4" *ngIf="!showButtons">
+            <button (click)="chooseMoodButton('Sad')" class="px-4 py-2 bg-blue-500 hover:bg-blue-700 text-white font-semibold rounded-lg shadow">Sad</button>
+            <button (click)="chooseMoodButton('Medium')" class="px-4 py-2 bg-gray-500 hover:bg-gray-700 text-white font-semibold rounded-lg shadow">Medium</button>
+            <button (click)="chooseMoodButton('Happy')" class="px-4 py-2 bg-green-500 hover:bg-green-700 text-white font-semibold rounded-lg shadow">Happy</button>
+        </div>
+        <div *ngIf="currentQuote" class="text-lg text-gray-700 font-medium">
+            <p>{{ currentQuote }}</p>
+        </div>
+    </div>
+</div>
+<div>
+    <app-media></app-media>
+</div>

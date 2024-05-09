@@ -1,0 +1,23 @@
+<div class="bg-blue-100 w-full h-96 flex justify-center items-center">
+    
+    <div *ngIf="!quizStarted && !resultMessage" class="flex flex-col justify-center items-center">
+      <h2 class="text-center mb-4">Let's play a game. See how your mood is.</h2>
+      <button (click)="startGameButton()" class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">Start Game</button>
+    </div>
+  
+    
+    <div *ngIf="quizStarted">
+      <h3>{{questions[currentQuestionIndex].text}}</h3>
+      <ul class="flex mb-2 xl:flex rs:flex-wrap ">
+        <li *ngFor="let option of questions[currentQuestionIndex].options" class="mr-2 mb-2 rs:flex rs:flex-wrap">
+          <button (click)="answerButton(option)" class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">{{option}}</button>
+        </li>
+      </ul>
+    </div>
+    
+    
+    <div *ngIf="!quizStarted && resultMessage" class="result-message">
+        <h2>Your Mood is:</h2>
+        <p class="text-lg">{{ resultMessage }}</p>
+    </div>
+</div>

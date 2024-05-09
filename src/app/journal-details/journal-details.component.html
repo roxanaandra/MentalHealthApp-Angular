@@ -1,0 +1,35 @@
+<div class=" w-full h-full h-auto bg-gray-100 dark:bg-gray-900 min-h-screen flex flex-col ">
+    <div class="flex-none bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700">
+      <div class="px-4 py-2 flex items-center justify-between flex-col">
+        <h1 class="text-lg font-semibold text-gray-800 dark:text-white">My Journal</h1>
+        <h2>Feel free to open your mind, heart, and soul</h2>
+        <img *ngIf="!showTextArea" src="assets/images/plus.svg" (click)="toggleInputSelection()"/>
+        
+
+
+        
+      </div>
+    </div>
+    <div class="flex-grow overflow-auto" >
+      <div class="max-w-md mx-auto py-8 px-4" >
+        <div class="flex items-center mb-4 ml-2" *ngIf="showTextArea">
+          <textarea [(ngModel)]="newItem" placeholder="Write something..." class="w-full h-96 p-4 text-lg border-2 border-blue-500 rounded-lg shadow-lg p-2"></textarea>
+          <button (click)="addButton()" class="px-4 py-2 bg-blue-500 text-white rounded-lg shadow hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 transition duration-150 ease-in-out">Add</button>
+        </div>
+        <ul>
+          <li *ngFor="let item of items; let i = index" class="w-auto h-auto mb-4">
+            <p  *ngIf="!editMode[i]">{{ item }} </p>
+            <textarea *ngIf="editMode[i]"  [(ngModel)]="items[i]" class="w-auto h-auto"></textarea>
+            <div class="flex items-center">
+              <input type="time" [(ngModel)]="itemTimes[i]" />
+              <button class="mx-2" (click)="editButton(i)">{{ editMode[i] ? 'Save' : 'Edit' }}</button>
+              <div style="width: 10px;"></div>
+              <button (click)="deleteButton(i)">Delete</button>
+            </div>
+          
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  
